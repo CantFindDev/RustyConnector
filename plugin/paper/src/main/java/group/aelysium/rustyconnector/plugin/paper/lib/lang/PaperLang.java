@@ -94,7 +94,10 @@ public class PaperLang extends Lang {
             BORDER.color(color),
             SPACING
     );
-
+    public final static ParameterizedMessage2<String, NamedTextColor> MESSAGE_COLORED = (message, color) -> join(
+            newlines(),
+            text(message).color(color)
+    );
     public final static Message RC_SEND_USAGE = () -> join(
             BORDER,
             SPACING,

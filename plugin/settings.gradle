@@ -1,2 +1,2 @@
-rootProject.name = 'rusty-connector'
+rootProject.name = 'RustyConnectorGrowtoCraft'
 include 'core', 'paper', ':velocity'

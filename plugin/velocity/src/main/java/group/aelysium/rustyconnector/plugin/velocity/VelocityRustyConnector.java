@@ -10,11 +10,13 @@ import group.aelysium.rustyconnector.core.lib.lang.Lang;
 import group.aelysium.rustyconnector.plugin.velocity.central.Tinder;
 import group.aelysium.rustyconnector.plugin.velocity.lib.bstats.Metrics;
 import group.aelysium.rustyconnector.plugin.velocity.lib.lang.VelocityLang;
+import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.JoinConfiguration;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.slf4j.Logger;
 
+import java.awt.*;
 import java.nio.file.Path;
 
 public class VelocityRustyConnector {
@@ -49,7 +51,8 @@ public class VelocityRustyConnector {
             Tinder.get().logger().log("Failed to register to bstats!");
         }
 
-        VelocityLang.WORDMARK_RUSTY_CONNECTOR.send(Tinder.get().logger(), "v"+Tinder.get().flame().version().toString());
+        Tinder.get().logger().send(VelocityLang.MESSAGE_COLORED.build("RustyConnector for velocity is up and running",NamedTextColor.GREEN));
+      //  VelocityLang.WORDMARK_RUSTY_CONNECTOR.send(Tinder.get().logger(), "v"+Tinder.get().flame().version().toString());
 
         if(!Tinder.get().velocityServer().getConfiguration().isOnlineMode())
             Tinder.get().logger().send(VelocityLang.BOXED_MESSAGE_COLORED.build("Your network is running in offline mode! YOU WILL RECEIVE NO SUPPORT AT ALL WITH RUSTYCONNECTOR!", NamedTextColor.RED));

@@ -138,6 +138,10 @@ public class VelocityLang extends Lang {
             BORDER.color(color),
             SPACING
     );
+    public final static ParameterizedMessage2<String, NamedTextColor> MESSAGE_COLORED = (message, color) -> join(
+            newlines(),
+            text(message).color(color)
+    );
     public final static ParameterizedMessage2<Component, NamedTextColor> BOXED_COMPONENT_COLORED = (message, color) -> join(
             newlines(),
             SPACING,

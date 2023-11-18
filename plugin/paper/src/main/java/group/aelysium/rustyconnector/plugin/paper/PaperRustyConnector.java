@@ -4,9 +4,12 @@ import group.aelysium.rustyconnector.core.lib.lang.Lang;
 import group.aelysium.rustyconnector.plugin.paper.central.Tinder;
 import group.aelysium.rustyconnector.plugin.paper.lib.bstats.Metrics;
 import group.aelysium.rustyconnector.plugin.paper.lib.lang.PaperLang;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.awt.*;
 
 public final class PaperRustyConnector extends JavaPlugin implements Listener {
     private Tinder tinder;
@@ -18,7 +21,8 @@ public final class PaperRustyConnector extends JavaPlugin implements Listener {
             this.tinder.ignite();
             Tinder.get().logger().log("Initializing RustyConnector...");
 
-            PaperLang.WORDMARK_RUSTY_CONNECTOR.send(this.tinder.logger(), this.tinder.flame().version());
+           // PaperLang.WORDMARK_RUSTY_CONNECTOR.send(this.tinder.logger(), this.tinder.flame().version());
+            Tinder.get().logger().send(PaperLang.MESSAGE_COLORED.build("RustyConnector is up and running", NamedTextColor.GREEN));
 
             try {
                 new Metrics(this, 17973);
